@@ -16,7 +16,7 @@ function Contact() {
     // }, [contacts])
     return (
         <div id="container">
-            <List contactsList={contacts}/>
+            <List contactsList={contacts} deleteContacts={setContacts}/>
             <Form addContacts={setContacts} contacts={contacts} />
         </div>
     );

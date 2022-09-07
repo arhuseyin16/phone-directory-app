@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function List({contactsList}) {
+function List({contactsList, deleteContacts}) {
     const [filterText, setFilterText] = useState("");
 
     const filtered = contactsList.filter((item) => {
@@ -12,6 +12,12 @@ function List({contactsList}) {
         );
     });
     // listeyi aldık filter ile filtreledik. object.keys methodu ile her bir iteme aldık. some methodu ile key kontrolu yaptık(name, phoe farketmez)
+
+    const onClickButton = (index) => {
+        filtered.splice(index, 1);
+        deleteContacts(filtered);
+    }
+
     return (
         <div>
             <h1>Contact List App</h1>
@@ -27,6 +33,7 @@ function List({contactsList}) {
                             <li key={index}>
                                 <span>{row.name}</span>
                                 <span>{row.phone}</span>
+                                <button className="delete" onClick={() => onClickButton(index)}>sil</button>
                             </li>
                     ))
                 }

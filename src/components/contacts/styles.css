@@ -49,4 +49,14 @@ ul,li {
     border-radius: 5px;
     width: 60px;
     height: 30px;
+    cursor: pointer;
+}
+
+button.delete {
+    background-color: burlywood;
+    border: none;
+    width: 30px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
 }
